@@ -1,0 +1,85 @@
+:root {
+	color-scheme: dark light;
+
+	--color-gray: #c0c0c0;
+	--color-gray-dark: #808080;
+
+	--color-red: #fe0000;
+	--color-blue: #0101f7;
+	--color-green: #017e00;
+	--color-purple: #02007f;
+	--color-salmon: #850003;
+	--color-turquoise: #00827d;
+
+	--color-white: #fff;
+	--color-black: #000;
+
+	--color-background: light-dark(var(--color-white), var(--color-black));
+	--color-content-background: light-dark(
+		var(--color-creme),
+		var(--color-dark-blue)
+	);
+	--color-text: light-dark(var(--color-black), var(--color-white));
+
+	--transition-duration: 0.3s;
+
+	--fw-digital: "Digital-7";
+	--fw-digital-mono: "Digital-7 Mono";
+
+	--theme-button-bg: var(--color-gray);
+	--theme-button-border-1: var(--color-white);
+	--theme-button-border-2: var(--color-gray-dark);
+	--theme-button-outline: var(--theme-button-border-2);
+	--theme-board-bg: var(--color-gray-dark);
+	--theme-board-bg-inner: var(--color-gray);
+	--theme-board-border-1: var(--color-white);
+	--theme-board-border-2: var(--color-gray-dark);
+	--theme-tile-bg: var(--color-gray);
+	--theme-tile-border-1: var(--color-white);
+	--theme-tile-border-2: var(--color-gray-dark);
+	--theme-color-1: var(--color-blue);
+	--theme-color-2: var(--color-green);
+	--theme-color-3: var(--color-red);
+	--theme-color-4: var(--color-purple);
+	--theme-color-5: var(--color-salmon);
+	--theme-color-6: var(--color-turquoise);
+	--theme-color-7: var(--color-black);
+	--theme-color-8: var(--color-gray-dark);
+	--theme-color-flag: var(--color-black);
+	--theme-color-flag-tissue: var(--color-red);
+	--theme-color-mine: var(--color-black);
+	--theme-color-mine-light: var(--color-white);
+	--theme-error: color-mix(
+		in srgb,
+		var(--theme-color-3) 25%,
+		var(--theme-tile-bg) 75%
+	);
+	--theme-counter-bg: var(--color-black);
+	--theme-counter-text: var(--color-red);
+	--theme-face-fill: #f4f61f;
+	--theme-face-stroke: var(--color-black);
+
+	/* --site-padding-mobile: 4%;
+	--site-padding-normal: 50px;
+	--site-padding-wide: 90px;
+	--site-padding: var(--site-padding-mobile);
+
+	--content-width-mobile: calc(
+		calc(100vw - (100vw - 100%)) - 2 * var(--site-padding-mobile)
+	);
+	--content-width-desktop: 920px;
+	--content-width-desktop-narrow: 80ch;
+
+	--content-width: var(--content-width-mobile);
+	--content-width-narrow: var(--content-width-mobile); */
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+	}
+}
+
+/* @media screen and (min-width: 1024px) {
+	:root {
+	}
+} */

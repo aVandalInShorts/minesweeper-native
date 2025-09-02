@@ -1,0 +1,55 @@
+[data-board-theme="lime"] {
+	--color-gray: #6edd71;
+	--color-gray-dark: #127f21;
+
+	--color-red: #d10300;
+	--color-blue: #0369cf;
+	--color-green: #1ebe2d;
+	--color-purple: #3d3bbe;
+	--color-salmon: #cd696b;
+	--color-turquoise: #32c2bd;
+
+	--color-yellow: #fed536;
+	--color-orange: #d39500;
+
+	--color-white: #c8c9c6;
+	--color-black: #373536;
+
+	--theme-button-bg: var(--color-gray);
+	--theme-button-border-1: var(--color-white);
+	--theme-button-border-2: var(--color-gray-dark);
+	--theme-button-outline: var(--theme-button-border-2);
+	--theme-board-bg: var(--color-orange);
+	--theme-board-bg-inner: var(--color-gray);
+	--theme-board-border-1: var(--color-white);
+	--theme-board-border-2: var(--color-gray-dark);
+	--theme-tile-bg: var(--color-gray);
+	--theme-tile-border-1: var(--color-white);
+	--theme-tile-border-2: var(--color-gray-dark);
+	--theme-tile-empty-bg: var(--color-yellow);
+	--theme-color-1: var(--color-blue);
+	--theme-color-2: var(--color-green);
+	--theme-color-3: var(--color-red);
+	--theme-color-4: var(--color-purple);
+	--theme-color-5: var(--color-salmon);
+	--theme-color-6: var(--color-turquoise);
+	--theme-color-7: var(--color-black);
+	--theme-color-8: var(--color-gray-dark);
+	--theme-color-flag: var(--color-white);
+	--theme-color-flag-tissue: var(-color-white);
+	--theme-color-mine: var(--color-black);
+	--theme-color-mine-light: #var(--color-white);
+	--theme-error: color-mix(
+		in srgb,
+		var(--theme-color-3) 75%,
+		var(--theme-tile-bg) 25%
+	);
+	--theme-counter-bg: color-mix(
+		in srgb,
+		var(--color-black) 85%,
+		var(--color-green) 15%
+	);
+	--theme-counter-text: var(--color-white);
+	--theme-face-fill: var(--color-white);
+	--theme-face-stroke: var(--color-black);
+}

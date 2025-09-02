@@ -1,0 +1,107 @@
+@layer reset {
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+	* {
+		margin: 0;
+		outline: none;
+	}
+	body {
+		-webkit-font-smoothing: antialiased;
+	}
+	img,
+	picture,
+	video,
+	canvas,
+	svg {
+		display: block;
+		max-width: 100%;
+	}
+	input,
+	button,
+	textarea,
+	select {
+		border-radius: 0;
+		font: inherit;
+	}
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		text-wrap: balance;
+	}
+
+	p,
+	li,
+	figcaption {
+		text-wrap: pretty;
+		max-width: 65ch;
+	}
+
+	button {
+		padding: 0;
+		background: none;
+		border: none;
+		cursor: pointer;
+	}
+
+	/* For React projects */
+	#root,
+	#__next {
+		isolation: isolate;
+	}
+}
+
+@layer default {
+	html,
+	body {
+		max-width: 100vw;
+		overflow-x: hidden;
+		min-height: 100vh;
+	}
+
+	body {
+		font-family: "Roboto", Arial, Helvetica, sans-serif;
+		font-size: 16px;
+		line-height: 1.5;
+		background-color: var(--color-background);
+		color: var(--color-text);
+		color-scheme: dark;
+		transition: background-color var(--transition-duration) ease-in-out;
+
+		&.light {
+			color-scheme: light;
+		}
+
+		*::selection {
+			background-color: var(--color-black);
+			color: var(--color-white);
+		}
+	}
+
+	h1 {
+		font-size: 40px;
+	}
+
+	h2 {
+		font-size: 32px;
+	}
+
+	h3 {
+		font-size: 28px;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+
+		p & {
+			text-decoration: underline;
+		}
+	}
+}

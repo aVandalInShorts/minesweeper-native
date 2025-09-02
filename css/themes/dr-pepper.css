@@ -1,0 +1,74 @@
+[data-board-theme="dr-pepper"] {
+	--color-dr-red-dark: #890024;
+	--color-dr-red: #c5023c;
+
+	--color-gray: #5f5f5f;
+	--color-gray-dark: #3e3e3e;
+	--color-white: #ffffff;
+	--color-black: #000;
+
+	--theme-button-bg: var(--color-gray);
+	--theme-button-border-1: var(--color-white);
+	--theme-button-border-2: var(--color-gray-dark);
+	--theme-button-outline: var(--theme-button-border-2);
+	--theme-board-bg: var(--color-gray-dark);
+	--theme-board-bg-inner: var(--color-gray);
+	--theme-board-border-1: var(--color-white);
+	--theme-board-border-2: var(--color-gray-dark);
+	--theme-tile-bg: var(--color-gray);
+	--theme-tile-border-1: var(--color-white);
+	--theme-tile-border-2: var(--color-gray-dark);
+	--theme-color-1: color-mix(
+		in srgb,
+		var(--color-dr-red-dark) 0%,
+		var(--color-dr-red) 100%
+	);
+	--theme-color-2: color-mix(
+		in srgb,
+		var(--color-dr-red-dark) 10%,
+		var(--color-dr-red) 90%
+	);
+	--theme-color-3: color-mix(
+		in srgb,
+		var(--color-dr-red-dark) 20%,
+		var(--color-dr-red) 80%
+	);
+	--theme-color-4: color-mix(
+		in srgb,
+		var(--color-dr-red-dark) 30%,
+		var(--color-dr-red) 70%
+	);
+	--theme-color-5: color-mix(
+		in srgb,
+		var(--color-dr-red-dark) 40%,
+		var(--color-dr-red) 60%
+	);
+	--theme-color-6: color-mix(
+		in srgb,
+		var(--color-dr-red-dark) 50%,
+		var(--color-dr-red) 50%
+	);
+	--theme-color-7: color-mix(
+		in srgb,
+		var(--color-dr-red-dark) 60%,
+		var(--color-dr-red) 40%
+	);
+	--theme-color-8: color-mix(
+		in srgb,
+		var(--color-dr-red-dark) 80%,
+		var(--color-dr-red) 20%
+	);
+	--theme-color-flag: var(--color-black);
+	--theme-color-flag-tissue: var(--color-red);
+	--theme-color-mine: var(--color-black);
+	--theme-color-mine-light: var(--color-white);
+	--theme-error: color-mix(
+		in srgb,
+		var(--theme-color-3) 25%,
+		var(--theme-tile-bg) 75%
+	);
+	--theme-counter-bg: var(--color-black);
+	--theme-counter-text: var(--color-red);
+	--theme-face-fill: #f4f61f;
+	--theme-face-stroke: var(--color-black);
+}

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Minesweeper Vandal</title>
+		<link rel="stylesheet" href="./css/style.css" />
+	</head>
+	<body>
+		<div class="big-container">
+			<header class="controls">
+				<div class="controls-col">
+					<div class="h1">Difficulties</div>
+					<button type="button" data-difficulty="easy">Easy</button>
+					<button type="button" data-difficulty="medium">
+						Medium
+					</button>
+					<button type="button" data-difficulty="hard">Hard</button>
+				</div>
+				<div class="controls-col">
+					<div class="h1">Inputs</div>
+					<label>
+						<span>Rows</span>
+						<input
+							type="number"
+							value="9"
+							step="1"
+							min="3"
+							max="20"
+							data-input="rows"
+						/>
+					</label>
+					<label>
+						<span>Columns</span>
+						<input
+							type="number"
+							value="9"
+							step="1"
+							min="3"
+							max="30"
+							data-input="columns"
+						/>
+					</label>
+					<label>
+						<span>Mines</span>
+						<input
+							type="number"
+							value="10"
+							step="1"
+							min="1"
+							max="80"
+							data-input="mines"
+						/>
+					</label>
+					<label>
+						<span>Theme</span>
+						<select data-theme-select="">
+							<option value="default">Default</option>
+							<option value="dark">Dark</option>
+							<option value="dr-pepper">Dr. Pepper</option>
+							<option value="watermelon">Watermelon</option>
+							<option value="lime">lime</option>
+						</select>
+					</label>
+				</div>
+				<div class="controls-col controls__start-col">
+					<button type="button" data-start-btn>New game</button>
+				</div>
+			</header>
+			<div class="board-ctn" data-board-theme="dr-pepper">
+				<div class="board-inner">
+					<div class="header">
+						<div class="counter" data-flag-remaining>
+							<span class="placeholder">0</span>
+							<span class="placeholder">0</span>
+							<span class="placeholder">0</span>
+						</div>
+						<div class="reset-ctn">
+							<button
+								type="button"
+								id="reset-btn"
+								class="reset-btn"
+								data-reset="smile"
+							>
+								<svg
+									class="reset__frown"
+									width="37.461"
+									height="36.843"
+									version="1.1"
+									viewBox="0 0 9.9116 9.7479"
+									xml:space="preserve"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<ellipse
+										class="reset__icon-face"
+										transform="translate(-101.32 -75.659)"
+										cx="106.28"
+										cy="80.533"
+										rx="4.7574"
+										ry="4.6755"
+										fill="#f4f61f"
+										stroke="#000"
+										stroke-width=".39688"
+									/>
+									<g stroke="#000" stroke-width=".68492">
+										<path
+											class="reset__icon-stroke"
+											transform="translate(-101.32 -75.659)"
+											d="m105.51 77.658-1.8001 1.9071"
+											stop-color="#000000"
+											style="
+												font-variation-settings: normal;
+											"
+										/>
+										<path
+											class="reset__icon-stroke"
+											transform="translate(-101.32 -75.659)"
+											d="m105.56 79.512-1.9071-1.8001"
+											stop-color="#000000"
+											style="
+												font-variation-settings: normal;
+											"
+										/>
+										<path
+											class="reset__icon-stroke"
+											transform="translate(-101.32 -75.659)"
+											d="m109.01 77.658-1.8001 1.9071"
+											stop-color="#000000"
+											style="
+												font-variation-settings: normal;
+											"
+										/>
+										<path
+											class="reset__icon-stroke"
+											transform="translate(-101.32 -75.659)"
+											d="m109.06 79.512-1.9071-1.8001"
+											stop-color="#000000"
+											style="
+												font-variation-settings: normal;
+											"
+										/>
+									</g>
+									<path
+										class="reset__icon-stroke"
+										transform="translate(-101.32 -75.659)"
+										d="m108.78 83.202c-0.42472-0.80602-1.3515-1.3229-2.372-1.3229-1.0203 1.88e-4 -1.9468 0.51705-2.3714 1.3229"
+										fill="none"
+										stroke="#000"
+										stroke-width=".74083"
+										style="paint-order: normal"
+									/>
+								</svg>
+								<svg
+									class="reset__victory"
+									width="37.461"
+									height="36.843"
+									version="1.1"
+									viewBox="0 0 9.9116 9.7479"
+									xml:space="preserve"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<g stroke="#000">
+										<ellipse
+											class="reset__icon-face"
+											transform="translate(-101.32 -75.659)"
+											cx="106.28"
+											cy="80.533"
+											rx="4.7574"
+											ry="4.6755"
+											fill="#f4f61f"
+											stroke-width=".39688"
+										/>
+										<path
+											class="reset__icon-stroke"
+											d="m2.6288 6.1241c0.42472 0.80602 1.6174 0.9445 2.3924 0.94451 0.80551-1.484e-4 1.9263-0.13864 2.351-0.94451"
+											fill="none"
+											stroke-width=".74083"
+											style="paint-order: normal"
+										/>
+										<path
+											class="reset__icon-stroke"
+											d="m0.19432 4.6023 2.6591-1.5955h2.117m4.7557 1.6568-2.6386-1.6568h-2.117"
+											fill="none"
+											stop-color="#000000"
+											stroke-width=".39688"
+											style="
+												-inkscape-stroke: none;
+												font-variation-settings: normal;
+											"
+										/>
+									</g>
+									<g stroke-width=".26458">
+										<path
+											class="reset__icon-stroke"
+											d="m5.1852 3.0477c1.7284 0 2.6489 0 2.3216 1.483-0.32727 1.483-2.07-0.23054-2.1886-0.34773-0.11866-0.11718-0.13295-1.1352-0.13295-1.1352z"
+										/>
+										<path
+											class="reset__icon-stroke"
+											d="m4.6739 3.0477c-1.7284 0-2.6489 0-2.3216 1.483 0.32727 1.483 2.07-0.23054 2.1886-0.34773 0.11866-0.11718 0.13295-1.1352 0.13295-1.1352z"
+										/>
+									</g>
+								</svg>
+								<svg
+									class="reset__smile"
+									width="37.461"
+									height="36.843"
+									version="1.1"
+									viewBox="0 0 9.9116 9.7479"
+									xml:space="preserve"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<ellipse
+										class="reset__icon-face"
+										transform="translate(-101.32 -75.659)"
+										cx="106.28"
+										cy="80.533"
+										rx="4.7574"
+										ry="4.6755"
+										fill="#f4f61f"
+										stroke="#000"
+										stroke-width=".39688"
+									/>
+									<path
+										class="reset__icon-stroke"
+										d="m2.6288 6.1241c0.42472 0.80602 1.6174 0.9445 2.3924 0.94451 0.80551-1.484e-4 1.9263-0.13864 2.351-0.94451"
+										fill="none"
+										stroke="#000"
+										stroke-width=".74083"
+										style="paint-order: normal"
+									/>
+									<circle
+										class="reset__icon-stroke-fill"
+										cx="3.3545"
+										cy="3.8352"
+										r="1.0023"
+										stroke-width=".26458"
+									/>
+									<circle
+										class="reset__icon-stroke-fill"
+										cx="6.2898"
+										cy="3.8352"
+										r="1.0023"
+										stroke-width=".26458"
+									/>
+								</svg>
+							</button>
+						</div>
+						<div class="counter" data-timer>
+							<span class="placeholder">0</span>
+							<span class="placeholder">0</span>
+							<span class="placeholder">0</span>
+						</div>
+					</div>
+					<div class="board" data-board></div>
+				</div>
+			</div>
+			<div class="elements">
+				<div class="tile" data-turntable-tile>
+					<span>
+						<svg
+							class="icon-mine"
+							width="7.9124mm"
+							height="7.9124mm"
+							version="1.1"
+							viewBox="0 0 7.9124 7.9124"
+							xml:space="preserve"
+							xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink"
+						>
+							<defs>
+								<radialGradient
+									id="radialGradient8"
+									class="icon-mine__gradient"
+									cx="115.53"
+									cy="133.07"
+									r=".9688"
+									gradientTransform="matrix(2.4662 0 0 2.4662 -281.41 -324.72)"
+									gradientUnits="userSpaceOnUse"
+								>
+									<stop stop-color="#fff" offset="0" />
+									<stop
+										stop-color="#fff"
+										stop-opacity=".68778"
+										offset=".17694"
+									/>
+									<stop stop-opacity="0" offset=".7748" />
+								</radialGradient>
+							</defs>
+							<g>
+								<circle
+									cx="3.949"
+									cy="3.8911"
+									r="2.6613"
+									stroke-width=".26458"
+									class="icon-mine__body"
+								/>
+								<g stroke="#000" class="icon-mine__spikes">
+									<path
+										d="m4.3691e-4 3.949 7.9116 0.0145"
+										stroke-width=".47678"
+									/>
+									<path
+										d="m3.9635 4.3691e-4 -0.0145 7.9116"
+										stroke-width=".47678"
+									/>
+									<path
+										d="m6.4714 1.4502-5.0169 4.9986"
+										stroke-width=".42679"
+									/>
+									<path
+										d="m6.4622 6.458-4.9986-5.017"
+										stroke-width=".42679"
+									/>
+								</g>
+							</g>
+							<circle
+								class="icon-mine__circle"
+								cx="3.5006"
+								cy="3.4572"
+								r="1.8013"
+								fill="url(#radialGradient8)"
+							/>
+						</svg>
+						<svg
+							class="icon-flag"
+							width="5.2267mm"
+							height="6.1703mm"
+							version="1.1"
+							viewBox="0 0 5.2267 6.1703"
+							xml:space="preserve"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<g transform="translate(-119.25 -147.81)">
+								<g>
+									<rect
+										x="119.46"
+										y="152.64"
+										width="5.0145"
+										height="1.3369"
+										rx=".3"
+										ry=".4"
+										stroke-width=".7792"
+									/>
+									<rect
+										x="120.63"
+										y="151.9"
+										width="2.7301"
+										height="1.5622"
+										rx=".31292"
+										ry=".41924"
+										stroke-width=".81471"
+									/>
+									<rect
+										x="122.08"
+										y="149.16"
+										width=".47636"
+										height="3.4369"
+										stroke-width=".89178"
+									/>
+								</g>
+								<path
+									d="m122.41 147.81c-0.37894 9e-3 -1.1601 0.60136-3.151 0.60136-0.16471 1.2498 1.6602 1.8211 3.2972 2.2412 0-1.8746-1e-3 -2.8462-1e-3 -2.8462z"
+									fill="#da1818"
+									stroke-width=".7792"
+								/>
+							</g>
+						</svg>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<!-- <script src="./js/confetti.min.js"></script> -->
+		<script src="./js/main.js"></script>
+	</body>
+</html>

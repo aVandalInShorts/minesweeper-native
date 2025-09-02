@@ -1,0 +1,51 @@
+[data-board-theme="watermelon"] {
+	--color-gray: #42af85;
+	--color-gray-dark: #308466;
+
+	--color-red: #fb9ca1;
+	--color-blue: #01d3fb;
+	--color-green: #07e178;
+	--color-purple: #f8b0ff;
+	--color-salmon: #f77a7c;
+	--color-turquoise: #80fdf9;
+
+	--color-white: #71cba8;
+	--color-black: #4c4f4e;
+
+	--theme-button-bg: var(--color-gray);
+	--theme-button-border-1: var(--color-white);
+	--theme-button-border-2: var(--color-gray-dark);
+	--theme-button-outline: var(--theme-button-border-2);
+	--theme-board-bg: var(--color-gray-dark);
+	--theme-board-bg-inner: var(--color-gray);
+	--theme-board-border-1: var(--color-white);
+	--theme-board-border-2: var(--color-gray-dark);
+	--theme-tile-bg: var(--color-gray);
+	--theme-tile-border-1: var(--color-white);
+	--theme-tile-border-2: var(--color-gray-dark);
+	--theme-color-1: var(--color-blue);
+	--theme-color-2: var(--color-green);
+	--theme-color-3: var(--color-red);
+	--theme-color-4: var(--color-purple);
+	--theme-color-5: var(--color-salmon);
+	--theme-color-6: var(--color-turquoise);
+	--theme-color-7: var(--color-black);
+	--theme-color-8: var(--color-gray-dark);
+	--theme-color-flag: #f9eff0;
+	--theme-color-flag-tissue: var(-color-red);
+	--theme-color-mine: var(--color-purple);
+	--theme-color-mine-light: #da95df;
+	--theme-error: color-mix(
+		in srgb,
+		var(--theme-color-3) 25%,
+		var(--theme-tile-bg) 75%
+	);
+	--theme-counter-bg: color-mix(
+		in srgb,
+		var(--color-black) 85%,
+		var(--color-gray) 15%
+	);
+	--theme-counter-text: #eaeaea;
+	--theme-face-fill: #f4f61f;
+	--theme-face-stroke: var(--color-black);
+}
