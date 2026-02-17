@@ -12,6 +12,7 @@ window.addEventListener("DOMContentLoaded", function () {
 	let counterTimer = 0;
 	let counterFlagRemaining = 0;
 	let timerInterval = null;
+	let currDifficulty = "beginner";
 	const boardElement = document.querySelector(".board");
 	const resetButton = document.querySelector("[data-reset]");
 	const turntableTileElement = document.querySelector(
@@ -19,11 +20,7 @@ window.addEventListener("DOMContentLoaded", function () {
 	);
 	const timerElement = document.querySelector("[data-timer]");
 	const flagCounterElement = document.querySelector("[data-flag-remaining]");
-	const difficultyButtons = document.querySelectorAll("[data-difficulty]");
-	const newGameButton = document.querySelector("[data-start-btn]");
-	const inputRows = document.querySelector('[data-input="rows"]');
-	const inputColumns = document.querySelector('[data-input="columns"]');
-	const inputMines = document.querySelector('[data-input="mines"]');
+	const newGameButtons = document.querySelectorAll("[data-new-game]");
 
 	const selectTheme = document.querySelector("[data-theme-select]");
 	const boardTheme = document.querySelector("[data-board-theme]");
@@ -443,82 +440,37 @@ window.addEventListener("DOMContentLoaded", function () {
 		setSummaryBarText();
 	};
 
-	const changeDifficultyInputs = (event) => {
-		const difficulty = event.target.getAttribute("data-difficulty");
-		let newRow, newCol, newMineCount;
+	const startNewGameWithDifficulty = (difficulty) => {
+		const [newRow, newCol, newMineCount] =
+			getGameDifficultySettings(difficulty);
+		row = newRow;
+		col = newCol;
+		mineCount = newMineCount;
 
-		if (difficulty === "medium") {
-			newRow = 16;
-			newCol = 16;
-			newMineCount = 40;
-		} else if (difficulty === "hard") {
-			newRow = 16;
-			newCol = 30;
-			newMineCount = 99;
-		} else {
-			// Easy
-			newRow = 9;
-			newCol = 9;
-			newMineCount = 10;
-		}
-
-		inputRows.value = newRow;
-		inputColumns.value = newCol;
-		inputMines.value = newMineCount;
-	};
-
-	const setMineInputMax = () => {
-		const newMineMax =
-			Math.floor(inputRows.value * inputColumns.value * 0.8) - 1;
-
-		if (inputMines.value > newMineMax) {
-			inputMines.value = newMineMax;
-		}
-
-		if (inputMines < 1) {
-			inputMines.value = 1;
-		}
-
-		inputMines.setAttribute("max", newMineMax);
-	};
-
-	const checkForNegativeNumber = (e) => {
-		const value = parseInt(e.target.value);
-		if (value < 0) {
-			e.target.value = 0;
-		}
+		startNewGame();
 	};
 
 	const startNewGame = () => {
-		row = inputRows.value;
-		col = inputColumns.value;
-		mineCount = inputMines.value;
 		absoluteMaxMineCount = Math.floor(row * col * 0.8) - 1;
 
 		if (row > 20) {
 			row = 20;
-			inputRows.value = 20;
 		}
 
 		if (row < 3) {
 			row = 3;
-			inputRows.value = 3;
 		}
 
 		if (col > 30) {
 			col = 30;
-			inputColumns.value = 30;
 		}
 
 		if (col < 3) {
 			col = 3;
-			inputColumns.value = 3;
 		}
 
 		if (mineCount > absoluteMaxMineCount) {
 			mineCount = absoluteMaxMineCount;
-
-			inputMines.value = absoluteMaxMineCount;
 		}
 
 		resetGame();
@@ -526,23 +478,12 @@ window.addEventListener("DOMContentLoaded", function () {
 
 	const setSummaryBarText = () => {
 		let difficultyText = "Custom";
-		const parsedRow = parseInt(inputRows.value);
-		const parsedCol = parseInt(inputColumns.value);
-		const parsedMineCount = parseInt(inputMines.value);
 
-		if (parsedRow === 9 && parsedCol === 9 && parsedMineCount === 10) {
-			difficultyText = "Easy";
-		} else if (
-			parsedRow === 16 &&
-			parsedCol === 16 &&
-			parsedMineCount === 40
-		) {
-			difficultyText = "Medium";
-		} else if (
-			parsedRow === 16 &&
-			parsedCol === 30 &&
-			parsedMineCount === 99
-		) {
+		if (row === 9 && col === 9 && mineCount === 10) {
+			difficultyText = "Beginner";
+		} else if (row === 16 && col === 16 && mineCount === 40) {
+			difficultyText = "Intermediate";
+		} else if (row === 16 && col === 30 && mineCount === 99) {
 			difficultyText = "Expert";
 		}
 
@@ -553,21 +494,27 @@ window.addEventListener("DOMContentLoaded", function () {
 		document.querySelector("[data-summary-mines]").textContent = mineCount;
 	};
 
-	resetGame();
-	generateEmptyBoard();
+	const getGameDifficultySettings = (difficulty) => {
+		if (difficulty === "intermediate") {
+			return [16, 16, 40];
+		} else if (difficulty === "expert") {
+			return [16, 30, 99];
+		} else {
+			return [9, 9, 10];
+		}
+	};
+
+	startNewGameWithDifficulty("beginner");
+
 	boardElement.addEventListener("contextmenu", (e) => e.preventDefault());
 	resetButton.addEventListener("click", resetGame);
-	difficultyButtons.forEach((button) => {
-		button.addEventListener("click", changeDifficultyInputs);
-	});
-	newGameButton.addEventListener("click", startNewGame);
-	inputRows.addEventListener("input", (e) => {
-		checkForNegativeNumber(e);
-		setMineInputMax();
-	});
-	inputColumns.addEventListener("input", (e) => {
-		checkForNegativeNumber(e);
-		setMineInputMax();
+
+	newGameButtons.forEach((button) => {
+		button.addEventListener("click", () => {
+			currDifficulty = button.getAttribute("data-new-game");
+			button.blur();
+			startNewGameWithDifficulty(currDifficulty);
+		});
 	});
 
 	selectTheme.addEventListener("change", (event) => {
