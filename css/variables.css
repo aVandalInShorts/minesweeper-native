@@ -57,6 +57,7 @@
 	--theme-counter-text: var(--color-red);
 	--theme-face-fill: #f4f61f;
 	--theme-face-stroke: var(--color-black);
+	--theme-summary-text-color: var(--color-black);
 
 	/* --site-padding-mobile: 4%;
 	--site-padding-normal: 50px;

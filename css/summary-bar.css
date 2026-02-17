@@ -1,0 +1,12 @@
+.summary-bar {
+	border-top: 2px solid var(--theme-board-border-1);
+	padding: 2px 4px 4px;
+
+	.summary-bar__content {
+		border: 1px solid var(--theme-button-border-2);
+		padding: 1px 8px;
+		color: var(--theme-summary-text-color);
+		font-size: 12px;
+		line-height: 16px;
+	}
+}

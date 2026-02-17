@@ -440,6 +440,7 @@ window.addEventListener("DOMContentLoaded", function () {
 		resetButton.setAttribute("data-reset", "smile");
 		removePressedTile();
 		generateEmptyBoard();
+		setSummaryBarText();
 	};
 
 	const changeDifficultyInputs = (event) => {
@@ -521,6 +522,35 @@ window.addEventListener("DOMContentLoaded", function () {
 		}
 
 		resetGame();
+	};
+
+	const setSummaryBarText = () => {
+		let difficultyText = "Custom";
+		const parsedRow = parseInt(inputRows.value);
+		const parsedCol = parseInt(inputColumns.value);
+		const parsedMineCount = parseInt(inputMines.value);
+
+		if (parsedRow === 9 && parsedCol === 9 && parsedMineCount === 10) {
+			difficultyText = "Easy";
+		} else if (
+			parsedRow === 16 &&
+			parsedCol === 16 &&
+			parsedMineCount === 40
+		) {
+			difficultyText = "Medium";
+		} else if (
+			parsedRow === 16 &&
+			parsedCol === 30 &&
+			parsedMineCount === 99
+		) {
+			difficultyText = "Expert";
+		}
+
+		document.querySelector("[data-summary-difficulty]").textContent =
+			difficultyText;
+		document.querySelector("[data-summary-grid]").textContent =
+			`${row}x${col}`;
+		document.querySelector("[data-summary-mines]").textContent = mineCount;
 	};
 
 	resetGame();
