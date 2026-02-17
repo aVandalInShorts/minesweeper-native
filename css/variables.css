@@ -1,6 +1,4 @@
 :root {
-	color-scheme: dark light;
-
 	--color-gray: #c0c0c0;
 	--color-gray-dark: #808080;
 
@@ -9,12 +7,12 @@
 	--color-green: #017e00;
 	--color-purple: #02007f;
 	--color-salmon: #850003;
-	--color-turquoise: #00827d;
+	--color-turquoise: #008080;
 
 	--color-white: #fff;
 	--color-black: #000;
 
-	--color-background: light-dark(var(--color-white), var(--color-black));
+	--color-background: var(--color-turquoise);
 	--color-content-background: light-dark(
 		var(--color-creme),
 		var(--color-dark-blue)
@@ -23,6 +21,7 @@
 
 	--transition-duration: 0.3s;
 
+	--fw-arial: "Arial", Helvetica, sans-serif;
 	--fw-digital: "Digital-7";
 	--fw-digital-mono: "Digital-7 Mono";
 

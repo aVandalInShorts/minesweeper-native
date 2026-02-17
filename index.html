@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -67,99 +67,42 @@
 					<button type="button" data-start-btn>New game</button>
 				</div>
 			</header>
-			<div class="board-ctn" data-board-theme="dr-pepper">
-				<div class="board-inner">
-					<div class="header">
-						<div class="counter" data-flag-remaining>
-							<span class="placeholder">0</span>
-							<span class="placeholder">0</span>
-							<span class="placeholder">0</span>
+			<div class="window-ctn">
+				<div class="window" data-board-theme="">
+					<div class="top-bar">
+						<div class="top-bar__left">
+							<span class="top-bar__icon">💣</span>
+							<div class="top-bar__title">Minesweeper Vandal</div>
 						</div>
-						<div class="reset-ctn">
-							<button
-								type="button"
-								id="reset-btn"
-								class="reset-btn"
-								data-reset="smile"
-							>
-								<svg
-									class="reset__frown"
-									width="37.461"
-									height="36.843"
-									version="1.1"
-									viewBox="0 0 9.9116 9.7479"
-									xml:space="preserve"
-									xmlns="http://www.w3.org/2000/svg"
+						<div class="top-bar__right">
+							<span class="top-bar__minify"></span>
+							<span class="top-bar__enlarge"></span>
+							<span class="top-bar__close"></span>
+						</div>
+					</div>
+					<div class="scene">
+						<div class="header">
+							<div class="counter" data-flag-remaining>
+								<span class="placeholder">0</span>
+								<span class="placeholder">0</span>
+								<span class="placeholder">0</span>
+							</div>
+							<div class="reset-ctn">
+								<button
+									type="button"
+									id="reset-btn"
+									class="reset-btn"
+									data-reset="smile"
 								>
-									<ellipse
-										class="reset__icon-face"
-										transform="translate(-101.32 -75.659)"
-										cx="106.28"
-										cy="80.533"
-										rx="4.7574"
-										ry="4.6755"
-										fill="#f4f61f"
-										stroke="#000"
-										stroke-width=".39688"
-									/>
-									<g stroke="#000" stroke-width=".68492">
-										<path
-											class="reset__icon-stroke"
-											transform="translate(-101.32 -75.659)"
-											d="m105.51 77.658-1.8001 1.9071"
-											stop-color="#000000"
-											style="
-												font-variation-settings: normal;
-											"
-										/>
-										<path
-											class="reset__icon-stroke"
-											transform="translate(-101.32 -75.659)"
-											d="m105.56 79.512-1.9071-1.8001"
-											stop-color="#000000"
-											style="
-												font-variation-settings: normal;
-											"
-										/>
-										<path
-											class="reset__icon-stroke"
-											transform="translate(-101.32 -75.659)"
-											d="m109.01 77.658-1.8001 1.9071"
-											stop-color="#000000"
-											style="
-												font-variation-settings: normal;
-											"
-										/>
-										<path
-											class="reset__icon-stroke"
-											transform="translate(-101.32 -75.659)"
-											d="m109.06 79.512-1.9071-1.8001"
-											stop-color="#000000"
-											style="
-												font-variation-settings: normal;
-											"
-										/>
-									</g>
-									<path
-										class="reset__icon-stroke"
-										transform="translate(-101.32 -75.659)"
-										d="m108.78 83.202c-0.42472-0.80602-1.3515-1.3229-2.372-1.3229-1.0203 1.88e-4 -1.9468 0.51705-2.3714 1.3229"
-										fill="none"
-										stroke="#000"
-										stroke-width=".74083"
-										style="paint-order: normal"
-									/>
-								</svg>
-								<svg
-									class="reset__victory"
-									width="37.461"
-									height="36.843"
-									version="1.1"
-									viewBox="0 0 9.9116 9.7479"
-									xml:space="preserve"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<g stroke="#000">
+									<svg
+										class="reset__frown"
+										width="37.461"
+										height="36.843"
+										version="1.1"
+										viewBox="0 0 9.9116 9.7479"
+										xml:space="preserve"
+										xmlns="http://www.w3.org/2000/svg"
+									>
 										<ellipse
 											class="reset__icon-face"
 											transform="translate(-101.32 -75.659)"
@@ -168,90 +111,160 @@
 											rx="4.7574"
 											ry="4.6755"
 											fill="#f4f61f"
+											stroke="#000"
+											stroke-width=".39688"
+										/>
+										<g stroke="#000" stroke-width=".68492">
+											<path
+												class="reset__icon-stroke"
+												transform="translate(-101.32 -75.659)"
+												d="m105.51 77.658-1.8001 1.9071"
+												stop-color="#000000"
+												style="
+													font-variation-settings: normal;
+												"
+											/>
+											<path
+												class="reset__icon-stroke"
+												transform="translate(-101.32 -75.659)"
+												d="m105.56 79.512-1.9071-1.8001"
+												stop-color="#000000"
+												style="
+													font-variation-settings: normal;
+												"
+											/>
+											<path
+												class="reset__icon-stroke"
+												transform="translate(-101.32 -75.659)"
+												d="m109.01 77.658-1.8001 1.9071"
+												stop-color="#000000"
+												style="
+													font-variation-settings: normal;
+												"
+											/>
+											<path
+												class="reset__icon-stroke"
+												transform="translate(-101.32 -75.659)"
+												d="m109.06 79.512-1.9071-1.8001"
+												stop-color="#000000"
+												style="
+													font-variation-settings: normal;
+												"
+											/>
+										</g>
+										<path
+											class="reset__icon-stroke"
+											transform="translate(-101.32 -75.659)"
+											d="m108.78 83.202c-0.42472-0.80602-1.3515-1.3229-2.372-1.3229-1.0203 1.88e-4 -1.9468 0.51705-2.3714 1.3229"
+											fill="none"
+											stroke="#000"
+											stroke-width=".74083"
+											style="paint-order: normal"
+										/>
+									</svg>
+									<svg
+										class="reset__victory"
+										width="37.461"
+										height="36.843"
+										version="1.1"
+										viewBox="0 0 9.9116 9.7479"
+										xml:space="preserve"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<g stroke="#000">
+											<ellipse
+												class="reset__icon-face"
+												transform="translate(-101.32 -75.659)"
+												cx="106.28"
+												cy="80.533"
+												rx="4.7574"
+												ry="4.6755"
+												fill="#f4f61f"
+												stroke-width=".39688"
+											/>
+											<path
+												class="reset__icon-stroke"
+												d="m2.6288 6.1241c0.42472 0.80602 1.6174 0.9445 2.3924 0.94451 0.80551-1.484e-4 1.9263-0.13864 2.351-0.94451"
+												fill="none"
+												stroke-width=".74083"
+												style="paint-order: normal"
+											/>
+											<path
+												class="reset__icon-stroke"
+												d="m0.19432 4.6023 2.6591-1.5955h2.117m4.7557 1.6568-2.6386-1.6568h-2.117"
+												fill="none"
+												stop-color="#000000"
+												stroke-width=".39688"
+												style="
+													-inkscape-stroke: none;
+													font-variation-settings: normal;
+												"
+											/>
+										</g>
+										<g stroke-width=".26458">
+											<path
+												class="reset__icon-stroke"
+												d="m5.1852 3.0477c1.7284 0 2.6489 0 2.3216 1.483-0.32727 1.483-2.07-0.23054-2.1886-0.34773-0.11866-0.11718-0.13295-1.1352-0.13295-1.1352z"
+											/>
+											<path
+												class="reset__icon-stroke"
+												d="m4.6739 3.0477c-1.7284 0-2.6489 0-2.3216 1.483 0.32727 1.483 2.07-0.23054 2.1886-0.34773 0.11866-0.11718 0.13295-1.1352 0.13295-1.1352z"
+											/>
+										</g>
+									</svg>
+									<svg
+										class="reset__smile"
+										width="37.461"
+										height="36.843"
+										version="1.1"
+										viewBox="0 0 9.9116 9.7479"
+										xml:space="preserve"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<ellipse
+											class="reset__icon-face"
+											transform="translate(-101.32 -75.659)"
+											cx="106.28"
+											cy="80.533"
+											rx="4.7574"
+											ry="4.6755"
+											fill="#f4f61f"
+											stroke="#000"
 											stroke-width=".39688"
 										/>
 										<path
 											class="reset__icon-stroke"
 											d="m2.6288 6.1241c0.42472 0.80602 1.6174 0.9445 2.3924 0.94451 0.80551-1.484e-4 1.9263-0.13864 2.351-0.94451"
 											fill="none"
+											stroke="#000"
 											stroke-width=".74083"
 											style="paint-order: normal"
 										/>
-										<path
-											class="reset__icon-stroke"
-											d="m0.19432 4.6023 2.6591-1.5955h2.117m4.7557 1.6568-2.6386-1.6568h-2.117"
-											fill="none"
-											stop-color="#000000"
-											stroke-width=".39688"
-											style="
-												-inkscape-stroke: none;
-												font-variation-settings: normal;
-											"
+										<circle
+											class="reset__icon-stroke-fill"
+											cx="3.3545"
+											cy="3.8352"
+											r="1.0023"
+											stroke-width=".26458"
 										/>
-									</g>
-									<g stroke-width=".26458">
-										<path
-											class="reset__icon-stroke"
-											d="m5.1852 3.0477c1.7284 0 2.6489 0 2.3216 1.483-0.32727 1.483-2.07-0.23054-2.1886-0.34773-0.11866-0.11718-0.13295-1.1352-0.13295-1.1352z"
+										<circle
+											class="reset__icon-stroke-fill"
+											cx="6.2898"
+											cy="3.8352"
+											r="1.0023"
+											stroke-width=".26458"
 										/>
-										<path
-											class="reset__icon-stroke"
-											d="m4.6739 3.0477c-1.7284 0-2.6489 0-2.3216 1.483 0.32727 1.483 2.07-0.23054 2.1886-0.34773 0.11866-0.11718 0.13295-1.1352 0.13295-1.1352z"
-										/>
-									</g>
-								</svg>
-								<svg
-									class="reset__smile"
-									width="37.461"
-									height="36.843"
-									version="1.1"
-									viewBox="0 0 9.9116 9.7479"
-									xml:space="preserve"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<ellipse
-										class="reset__icon-face"
-										transform="translate(-101.32 -75.659)"
-										cx="106.28"
-										cy="80.533"
-										rx="4.7574"
-										ry="4.6755"
-										fill="#f4f61f"
-										stroke="#000"
-										stroke-width=".39688"
-									/>
-									<path
-										class="reset__icon-stroke"
-										d="m2.6288 6.1241c0.42472 0.80602 1.6174 0.9445 2.3924 0.94451 0.80551-1.484e-4 1.9263-0.13864 2.351-0.94451"
-										fill="none"
-										stroke="#000"
-										stroke-width=".74083"
-										style="paint-order: normal"
-									/>
-									<circle
-										class="reset__icon-stroke-fill"
-										cx="3.3545"
-										cy="3.8352"
-										r="1.0023"
-										stroke-width=".26458"
-									/>
-									<circle
-										class="reset__icon-stroke-fill"
-										cx="6.2898"
-										cy="3.8352"
-										r="1.0023"
-										stroke-width=".26458"
-									/>
-								</svg>
-							</button>
+									</svg>
+								</button>
+							</div>
+							<div class="counter" data-timer>
+								<span class="placeholder">0</span>
+								<span class="placeholder">0</span>
+								<span class="placeholder">0</span>
+							</div>
 						</div>
-						<div class="counter" data-timer>
-							<span class="placeholder">0</span>
-							<span class="placeholder">0</span>
-							<span class="placeholder">0</span>
-						</div>
+						<div class="board" data-board></div>
 					</div>
-					<div class="board" data-board></div>
 				</div>
 			</div>
 			<div class="elements">

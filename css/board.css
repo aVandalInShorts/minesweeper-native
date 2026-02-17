@@ -4,14 +4,18 @@
 	min-height: 100vh;
 }
 
-.board-ctn {
+.window-ctn {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-grow: 1;
 }
 
-.board-inner {
+.window {
+	background-color: var(--theme-board-bg-inner);
+}
+
+.scene {
 	display: flex;
 	flex-flow: column nowrap;
 	border: 7px solid var(--theme-board-border-1);
@@ -19,7 +23,6 @@
 	border-right-color: var(--theme-board-border-2);
 	padding: 12px;
 	gap: 5px;
-	background-color: var(--theme-board-bg-inner);
 }
 
 .board {
@@ -35,7 +38,4 @@
 
 .elements {
 	display: none;
-}
-
-[data-board-theme="dark"] {
 }
