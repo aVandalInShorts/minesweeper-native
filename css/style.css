@@ -5,6 +5,7 @@
 @import "theme.css";
 
 @import "top-bar.css";
+@import "tool-bar.css";
 @import "board.css";
 @import "board-header.css";
 @import "tile.css";

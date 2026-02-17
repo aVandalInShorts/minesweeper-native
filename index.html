@@ -63,9 +63,9 @@
 						</select>
 					</label>
 				</div>
-				<div class="controls-col controls__start-col">
+				<!-- <div class="controls-col controls__start-col">
 					<button type="button" data-start-btn>New game</button>
-				</div>
+				</div> -->
 			</header>
 			<div class="window-ctn">
 				<div class="window" data-board-theme="">
@@ -78,6 +78,46 @@
 							<span class="top-bar__minify"></span>
 							<span class="top-bar__enlarge"></span>
 							<span class="top-bar__close"></span>
+						</div>
+					</div>
+					<div class="tool-bar">
+						<div class="tool-bar__item">
+							<button
+								type="button"
+								class="no-style tool-bar__btn"
+							>
+								<u>G</u>ame
+							</button>
+							<div class="tool-bar__popover">
+								<button
+									type="button"
+									class="no-style tool-bar__popover-btn"
+								>
+									New game
+								</button>
+								<div class="tool-bar__popover-gap"></div>
+								<button
+									type="button"
+									class="no-style tool-bar__popover-btn"
+									data-new-game="beginner"
+								>
+									Beginner
+								</button>
+								<button
+									type="button"
+									class="no-style tool-bar__popover-btn"
+									data-new-game="intermediate"
+								>
+									Intermediate
+								</button>
+								<button
+									type="button"
+									class="no-style tool-bar__popover-btn"
+									data-new-game="expert"
+								>
+									Expert
+								</button>
+							</div>
 						</div>
 					</div>
 					<div class="scene">

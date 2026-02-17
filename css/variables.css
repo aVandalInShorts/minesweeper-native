@@ -57,6 +57,11 @@
 	--theme-counter-text: var(--color-red);
 	--theme-face-fill: #f4f61f;
 	--theme-face-stroke: var(--color-black);
+
+	--theme-tool-text-color: var(--color-black);
+	--theme-tool-text-hover-color: var(--color-white);
+	--theme-summary-dark-blue: #000080;
+	--theme-summary-light-blue: #1084d0;
 	--theme-summary-text-color: var(--color-black);
 
 	/* --site-padding-mobile: 4%;

@@ -1,7 +1,11 @@
 .top-bar {
 	display: grid;
 	grid-template-columns: 1fr auto;
-	background: linear-gradient(90deg, #000080 0%, #1084d0 100%);
+	background: linear-gradient(
+		90deg,
+		var(--theme-summary-dark-blue) 0%,
+		var(--theme-summary-light-blue) 100%
+	);
 	padding: 4px;
 
 	.top-bar__left {

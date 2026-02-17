@@ -1,0 +1,67 @@
+.tool-bar {
+	display: flex;
+	gap: 20px;
+	border-bottom: 2px solid var(--theme-board-border-1);
+
+	.tool-bar__item {
+		position: relative;
+
+		&:focus-within .tool-bar__btn,
+		.tool-bar__btn:hover {
+			background-color: var(--theme-summary-dark-blue);
+			color: var(--theme-tool-text-hover-color);
+		}
+
+		&:focus-within {
+			.tool-bar__popover {
+				display: block;
+			}
+		}
+	}
+
+	.tool-bar__btn {
+		padding: 4px 10px;
+		color: var(--theme-tool-text-color);
+		font-size: 16px;
+		line-height: 24px;
+	}
+
+	.tool-bar__popover {
+		display: none;
+		position: absolute;
+		z-index: 100;
+		top: 100%;
+		left: 0;
+		background-color: var(--theme-board-bg-inner);
+		border: 2px solid var(--theme-button-border-1);
+		border-bottom-color: var(--theme-button-border-2);
+		border-right-color: var(--theme-button-border-2);
+	}
+
+	.tool-bar__popover-btn {
+		width: 100%;
+		padding: 4px 10px;
+		color: var(--theme-tool-text-color);
+		font-size: 16px;
+		line-height: 24px;
+		text-align: left;
+
+		&:hover {
+			background-color: var(--theme-summary-dark-blue);
+			color: var(--theme-tool-text-hover-color);
+		}
+	}
+
+	.tool-bar__popover-gap {
+		position: relative;
+		height: 10px;
+
+		&:before {
+			content: "";
+			position: absolute;
+			inset: 5px 10px auto;
+			height: 1px;
+			background-color: var(--theme-button-border-2);
+		}
+	}
+}
