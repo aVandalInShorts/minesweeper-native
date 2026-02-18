@@ -15,14 +15,12 @@ window.addEventListener("DOMContentLoaded", function () {
 	let currDifficulty = "beginner";
 	const boardElement = document.querySelector(".board");
 	const resetButton = document.querySelector("[data-reset]");
-	const turntableTileElement = document.querySelector(
-		"[data-turntable-tile]",
-	);
+	const turntableTileElement = document.querySelector("[data-turntable-tile]");
 	const timerElement = document.querySelector("[data-timer]");
 	const flagCounterElement = document.querySelector("[data-flag-remaining]");
 	const newGameButtons = document.querySelectorAll("[data-new-game]");
 
-	const selectTheme = document.querySelector("[data-theme-select]");
+	const selectThemeButtons = document.querySelectorAll("[data-theme-btn]");
 	const boardTheme = document.querySelector("[data-board-theme]");
 
 	const handleBoardMousedown = (event) => {
@@ -41,10 +39,7 @@ window.addEventListener("DOMContentLoaded", function () {
 		boardElement.removeEventListener("mouseleave", handleBoardMouseup);
 		boardElement.removeEventListener("mousemove", mouseEffect);
 
-		let tileMouseup = document.elementFromPoint(
-			event.clientX,
-			event.clientY,
-		);
+		let tileMouseup = document.elementFromPoint(event.clientX, event.clientY);
 
 		if (tileMouseup.classList.contains("board")) {
 			return;
@@ -59,7 +54,7 @@ window.addEventListener("DOMContentLoaded", function () {
 				// All mouse events trigger the start of the game
 				generateMineGrid(
 					tileMouseup.getAttribute("data-row"),
-					tileMouseup.getAttribute("data-col"),
+					tileMouseup.getAttribute("data-col")
 				);
 				gameIsStarted = true;
 				startTimer();
@@ -80,10 +75,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 	const mouseEffect = (event) => {
 		removePressedTile();
-		let tileHovered = document.elementFromPoint(
-			event.clientX,
-			event.clientY,
-		);
+		let tileHovered = document.elementFromPoint(event.clientX, event.clientY);
 
 		if (tileHovered.classList.contains("board")) {
 			return;
@@ -98,7 +90,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 		if (
 			["1", "2", "3", "4", "5", "6", "7", "8", "9"].includes(
-				tileHovered.getAttribute("data-tile"),
+				tileHovered.getAttribute("data-tile")
 			)
 		) {
 			for (let i = -1; i <= 1; i++) {
@@ -110,13 +102,9 @@ window.addEventListener("DOMContentLoaded", function () {
 						tileCol + j < col
 					) {
 						const neighborTile = boardElement.querySelector(
-							`[data-row="${tileRow + i}"][data-col="${
-								tileCol + j
-							}"]`,
+							`[data-row="${tileRow + i}"][data-col="${tileCol + j}"]`
 						);
-						if (
-							neighborTile.getAttribute("data-tile") === "hidden"
-						) {
+						if (neighborTile.getAttribute("data-tile") === "hidden") {
 							neighborTile.setAttribute("data-pressed", true);
 						}
 					}
@@ -155,7 +143,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 		if (
 			["1", "2", "3", "4", "5", "6", "7", "8", "9"].includes(
-				tile.getAttribute("data-tile"),
+				tile.getAttribute("data-tile")
 			) &&
 			checkIfTileHasSameNumberOfNeighboringFlags(tile)
 		) {
@@ -218,7 +206,7 @@ window.addEventListener("DOMContentLoaded", function () {
 					tileCol + j < col
 				) {
 					const neighborTile = boardElement.querySelector(
-						`[data-row="${tileRow + i}"][data-col="${tileCol + j}"]`,
+						`[data-row="${tileRow + i}"][data-col="${tileCol + j}"]`
 					);
 					if (neighborTile.getAttribute("data-tile") === "hidden") {
 						if (mineGrid[tileRow + i][tileCol + j] !== true) {
@@ -247,7 +235,7 @@ window.addEventListener("DOMContentLoaded", function () {
 					tileCol + j < col
 				) {
 					const neighborTile = boardElement.querySelector(
-						`[data-row="${tileRow + i}"][data-col="${tileCol + j}"]`,
+						`[data-row="${tileRow + i}"][data-col="${tileCol + j}"]`
 					);
 					if (neighborTile.getAttribute("data-tile") === "flag") {
 						neighborFlags++;
@@ -290,20 +278,10 @@ window.addEventListener("DOMContentLoaded", function () {
 		counterFlagRemaining = mineCount;
 
 		while (minesToPlace > 0) {
-			const [currRow, currCol] = getTileWithNoMine(
-				excludeRow,
-				excludeCol,
-			);
+			const [currRow, currCol] = getTileWithNoMine(excludeRow, excludeCol);
 			mineGrid[currRow][currCol] = true;
 			minesToPlace--;
-			console.log(
-				"Mine: ",
-				minesToPlace,
-				"Row: ",
-				currRow,
-				"Col: ",
-				currCol,
-			);
+			console.log("Mine: ", minesToPlace, "Row: ", currRow, "Col: ", currCol);
 		}
 
 		console.log("mineGrid", mineGrid);
@@ -333,7 +311,7 @@ window.addEventListener("DOMContentLoaded", function () {
 			for (let j = 0; j < col; j++) {
 				if (mineGrid[i][j] === true) {
 					const tile = boardElement.querySelector(
-						`[data-row="${i}"][data-col="${j}"]`,
+						`[data-row="${i}"][data-col="${j}"]`
 					);
 					if (tile.getAttribute("data-tile") !== "flag") {
 						setMineIcon(tile, i === tileRow && j === tileCol);
@@ -392,14 +370,14 @@ window.addEventListener("DOMContentLoaded", function () {
 
 	const checkIfGGWP = () => {
 		const revealedTilesCount = boardElement.querySelectorAll(
-			"[data-tile]:not([data-tile='hidden']):not([data-tile='flag'])",
+			"[data-tile]:not([data-tile='hidden']):not([data-tile='flag'])"
 		).length;
 
 		console.log("GG", revealedTilesCount, row * col - mineCount);
 
 		if (revealedTilesCount === row * col - mineCount) {
 			const remainingTiles = boardElement.querySelectorAll(
-				"[data-tile='hidden']",
+				"[data-tile='hidden']"
 			);
 			remainingTiles.forEach((tile) => {
 				tile.setAttribute("data-tile", "flag");
@@ -489,8 +467,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 		document.querySelector("[data-summary-difficulty]").textContent =
 			difficultyText;
-		document.querySelector("[data-summary-grid]").textContent =
-			`${row}x${col}`;
+		document.querySelector("[data-summary-grid]").textContent = `${row}x${col}`;
 		document.querySelector("[data-summary-mines]").textContent = mineCount;
 	};
 
@@ -517,7 +494,13 @@ window.addEventListener("DOMContentLoaded", function () {
 		});
 	});
 
-	selectTheme.addEventListener("change", (event) => {
-		boardTheme.setAttribute("data-board-theme", event.target.value);
+	selectThemeButtons.forEach((button) => {
+		button.addEventListener("click", () => {
+			boardTheme.setAttribute(
+				"data-board-theme",
+				button.getAttribute("data-theme-btn")
+			);
+			button.blur();
+		});
 	});
 });

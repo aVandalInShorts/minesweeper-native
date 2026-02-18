@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -8,24 +8,6 @@
 	</head>
 	<body>
 		<div class="big-container">
-			<header class="controls">
-				<div class="controls-col">
-					<div class="h1">Inputs</div>
-					<label>
-						<span>Theme</span>
-						<select data-theme-select="">
-							<option value="default">Default</option>
-							<option value="dark">Dark</option>
-							<option value="dr-pepper">Dr. Pepper</option>
-							<option value="watermelon">Watermelon</option>
-							<option value="lime">lime</option>
-						</select>
-					</label>
-				</div>
-				<!-- <div class="controls-col controls__start-col">
-					<button type="button" data-start-btn>New game</button>
-				</div> -->
-			</header>
 			<div class="window-ctn">
 				<div class="window" data-board-theme="">
 					<div class="top-bar">
@@ -41,17 +23,11 @@
 					</div>
 					<div class="tool-bar">
 						<div class="tool-bar__item">
-							<button
-								type="button"
-								class="no-style tool-bar__btn"
-							>
+							<button type="button" class="no-style tool-bar__btn">
 								<u>G</u>ame
 							</button>
 							<div class="tool-bar__popover">
-								<button
-									type="button"
-									class="no-style tool-bar__popover-btn"
-								>
+								<button type="button" class="no-style tool-bar__popover-btn">
 									New game
 								</button>
 								<div class="tool-bar__popover-gap"></div>
@@ -75,6 +51,48 @@
 									data-new-game="expert"
 								>
 									Expert
+								</button>
+							</div>
+						</div>
+						<div class="tool-bar__item">
+							<button type="button" class="no-style tool-bar__btn">
+								<u>T</u>heme
+							</button>
+							<div class="tool-bar__popover">
+								<button
+									type="button"
+									class="no-style tool-bar__popover-btn"
+									data-theme-btn="default"
+								>
+									Default
+								</button>
+								<button
+									type="button"
+									class="no-style tool-bar__popover-btn"
+									data-theme-btn="dark"
+								>
+									Dark
+								</button>
+								<button
+									type="button"
+									class="no-style tool-bar__popover-btn"
+									data-theme-btn="dr-pepper"
+								>
+									Dr. Pepper
+								</button>
+								<button
+									type="button"
+									class="no-style tool-bar__popover-btn"
+									data-theme-btn="watermelon"
+								>
+									Watermelon
+								</button>
+								<button
+									type="button"
+									class="no-style tool-bar__popover-btn"
+									data-theme-btn="lime"
+								>
+									Lime
 								</button>
 							</div>
 						</div>
@@ -119,36 +137,28 @@
 												transform="translate(-101.32 -75.659)"
 												d="m105.51 77.658-1.8001 1.9071"
 												stop-color="#000000"
-												style="
-													font-variation-settings: normal;
-												"
+												style="font-variation-settings: normal"
 											/>
 											<path
 												class="reset__icon-stroke"
 												transform="translate(-101.32 -75.659)"
 												d="m105.56 79.512-1.9071-1.8001"
 												stop-color="#000000"
-												style="
-													font-variation-settings: normal;
-												"
+												style="font-variation-settings: normal"
 											/>
 											<path
 												class="reset__icon-stroke"
 												transform="translate(-101.32 -75.659)"
 												d="m109.01 77.658-1.8001 1.9071"
 												stop-color="#000000"
-												style="
-													font-variation-settings: normal;
-												"
+												style="font-variation-settings: normal"
 											/>
 											<path
 												class="reset__icon-stroke"
 												transform="translate(-101.32 -75.659)"
 												d="m109.06 79.512-1.9071-1.8001"
 												stop-color="#000000"
-												style="
-													font-variation-settings: normal;
-												"
+												style="font-variation-settings: normal"
 											/>
 										</g>
 										<path
@@ -265,10 +275,7 @@
 						<div class="board" data-board></div>
 					</div>
 					<div class="summary-bar">
-						<div
-							class="summary-bar__content"
-							data-summary-bar-content
-						>
+						<div class="summary-bar__content" data-summary-bar-content>
 							<span data-summary-difficulty>Expert</span> -
 							<span data-summary-grid>16x30</span>,
 							<span data-summary-mines>99</span>
@@ -330,10 +337,7 @@
 										d="m6.4714 1.4502-5.0169 4.9986"
 										stroke-width=".42679"
 									/>
-									<path
-										d="m6.4622 6.458-4.9986-5.017"
-										stroke-width=".42679"
-									/>
+									<path d="m6.4622 6.458-4.9986-5.017" stroke-width=".42679" />
 								</g>
 							</g>
 							<circle

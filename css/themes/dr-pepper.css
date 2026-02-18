@@ -71,4 +71,8 @@
 	--theme-counter-text: var(--color-red);
 	--theme-face-fill: #f4f61f;
 	--theme-face-stroke: var(--color-black);
+
+	--theme-top-bar-btn-content-color: var(--color-white);
+	--theme-tool-text-color: var(--color-white);
+	--theme-summary-text-color: var(--color-white);
 }
