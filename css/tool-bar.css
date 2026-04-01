@@ -44,10 +44,17 @@
 		font-size: 16px;
 		line-height: 24px;
 		text-align: left;
+		white-space: nowrap;
 
 		&:hover {
 			background-color: var(--theme-summary-dark-blue);
 			color: var(--theme-tool-text-hover-color);
+		}
+
+		sup {
+			font-size: 10px;
+			line-height: 1;
+			margin-left: 3px;
 		}
 	}
 

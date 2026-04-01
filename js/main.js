@@ -521,4 +521,12 @@ window.addEventListener("DOMContentLoaded", function () {
 			button.blur();
 		});
 	});
+
+	window.addEventListener("keydown", (event) => {
+		console.log("dsadsa", event.code);
+		if (event.code === "F2") {
+			event.preventDefault();
+			startNewGameWithDifficulty(currDifficulty);
+		}
+	});
 });
