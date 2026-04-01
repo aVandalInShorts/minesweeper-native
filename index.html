@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -12,7 +12,36 @@
 				<div class="window" data-board-theme="">
 					<div class="top-bar">
 						<div class="top-bar__left">
-							<span class="top-bar__icon">💣</span>
+							<span class="top-bar__icon">
+								<svg
+									width="800px"
+									height="800px"
+									viewBox="-2 0 64.006 64.006"
+									version="1.1"
+									xml:space="preserve"
+									xmlns="http://www.w3.org/2000/svg"
+									xmlns:xlink="http://www.w3.org/1999/xlink"
+								>
+									<path
+										d="M59.981,1.976c-0.01-0.873-0.587-1.67-1.471-1.908    c-1.064-0.285-2.158,0.348-2.443,1.413c-0.047,0.175-0.061,0.35-0.06,0.522C56.006,2.005,56,2.005,56,2.006c0,7.708-12,14-12,14    l4,2c0,0,12-5.513,12-16C60.003,1.995,59.989,1.986,59.981,1.976z"
+										style="
+											fill-rule: evenodd;
+											clip-rule: evenodd;
+											fill: #ffcc66;
+										"
+									/>
+									<path
+										d="M53.426,18.625L45.32,10.52c-0.745-0.746-1.955-0.746-2.701,0l-8.105,8.105    c-0.746,0.746-0.746,1.956,0,2.701l8.105,8.105c0.746,0.746,1.956,0.746,2.701,0l8.105-8.105    C54.172,20.581,54.172,19.371,53.426,18.625z"
+										style="fill: #333333"
+									/>
+									<circle
+										cx="26"
+										cy="38.006"
+										r="26"
+										style="fill: #4d4d4d"
+									/>
+								</svg>
+							</span>
 							<div class="top-bar__title">Minesweeper Vandal</div>
 						</div>
 						<div class="top-bar__right">
@@ -23,11 +52,17 @@
 					</div>
 					<div class="tool-bar">
 						<div class="tool-bar__item">
-							<button type="button" class="no-style tool-bar__btn">
+							<button
+								type="button"
+								class="no-style tool-bar__btn"
+							>
 								<u>G</u>ame
 							</button>
 							<div class="tool-bar__popover">
-								<button type="button" class="no-style tool-bar__popover-btn">
+								<button
+									type="button"
+									class="no-style tool-bar__popover-btn"
+								>
 									New game
 								</button>
 								<div class="tool-bar__popover-gap"></div>
@@ -55,7 +90,10 @@
 							</div>
 						</div>
 						<div class="tool-bar__item">
-							<button type="button" class="no-style tool-bar__btn">
+							<button
+								type="button"
+								class="no-style tool-bar__btn"
+							>
 								<u>T</u>heme
 							</button>
 							<div class="tool-bar__popover">
@@ -137,28 +175,36 @@
 												transform="translate(-101.32 -75.659)"
 												d="m105.51 77.658-1.8001 1.9071"
 												stop-color="#000000"
-												style="font-variation-settings: normal"
+												style="
+													font-variation-settings: normal;
+												"
 											/>
 											<path
 												class="reset__icon-stroke"
 												transform="translate(-101.32 -75.659)"
 												d="m105.56 79.512-1.9071-1.8001"
 												stop-color="#000000"
-												style="font-variation-settings: normal"
+												style="
+													font-variation-settings: normal;
+												"
 											/>
 											<path
 												class="reset__icon-stroke"
 												transform="translate(-101.32 -75.659)"
 												d="m109.01 77.658-1.8001 1.9071"
 												stop-color="#000000"
-												style="font-variation-settings: normal"
+												style="
+													font-variation-settings: normal;
+												"
 											/>
 											<path
 												class="reset__icon-stroke"
 												transform="translate(-101.32 -75.659)"
 												d="m109.06 79.512-1.9071-1.8001"
 												stop-color="#000000"
-												style="font-variation-settings: normal"
+												style="
+													font-variation-settings: normal;
+												"
 											/>
 										</g>
 										<path
@@ -275,7 +321,10 @@
 						<div class="board" data-board></div>
 					</div>
 					<div class="summary-bar">
-						<div class="summary-bar__content" data-summary-bar-content>
+						<div
+							class="summary-bar__content"
+							data-summary-bar-content
+						>
 							<span data-summary-difficulty>Expert</span> -
 							<span data-summary-grid>16x30</span>,
 							<span data-summary-mines>99</span>
@@ -337,7 +386,10 @@
 										d="m6.4714 1.4502-5.0169 4.9986"
 										stroke-width=".42679"
 									/>
-									<path d="m6.4622 6.458-4.9986-5.017" stroke-width=".42679" />
+									<path
+										d="m6.4622 6.458-4.9986-5.017"
+										stroke-width=".42679"
+									/>
 								</g>
 							</g>
 							<circle
@@ -397,7 +449,6 @@
 			</div>
 		</div>
 
-		<!-- <script src="./js/confetti.min.js"></script> -->
 		<script src="./js/main.js"></script>
 	</body>
 </html>

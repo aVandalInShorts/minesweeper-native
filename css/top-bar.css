@@ -16,12 +16,17 @@
 	}
 
 	.top-bar__icon {
-		display: block;
+		display: grid;
+		place-items: center;
 		width: 16px;
 		height: 16px;
-		font-size: 10px;
 		background-color: var(--color-white);
 		border: 1px solid var(--color-black);
+
+		svg {
+			width: 12px;
+			height: 12px;
+		}
 	}
 
 	.top-bar__title {
