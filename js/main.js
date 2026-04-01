@@ -10,6 +10,7 @@ window.addEventListener("DOMContentLoaded", function () {
 	let counterFlagRemaining = 0;
 	let timerInterval = null;
 	let currDifficulty = "beginner";
+	let mode = "discoverer";
 	const boardElement = document.querySelector(".board");
 	const resetButton = document.querySelector("[data-reset]");
 	const turntableTileElement = document.querySelector(
@@ -21,6 +22,8 @@ window.addEventListener("DOMContentLoaded", function () {
 
 	const selectThemeButtons = document.querySelectorAll("[data-theme-btn]");
 	const boardTheme = document.querySelector("[data-board-theme]");
+	const modeSwitcher = document.querySelector("[data-mode-switcher]");
+	const modeSwitcherBtn = modeSwitcher.querySelectorAll("[data-mode-btn]");
 
 	const handleBoardMousedown = (event) => {
 		event.preventDefault();
@@ -64,7 +67,7 @@ window.addEventListener("DOMContentLoaded", function () {
 				handleTileReveal(tileMouseup);
 			} else {
 				// Game is already started, the mouse events do specific things
-				if (event.button === 2) {
+				if (event.button === 2 || mode === "flag") {
 					// Right click
 					addFlagOnTile(tileMouseup);
 				} else {
@@ -499,6 +502,14 @@ window.addEventListener("DOMContentLoaded", function () {
 		}
 	};
 
+	const switchMode = (e) => {
+		const newMode = e.target.getAttribute("data-mode-btn");
+		if (newMode !== mode) {
+			mode = newMode;
+			modeSwitcher.attributes["data-mode-switcher"].value = mode;
+		}
+	};
+
 	startNewGameWithDifficulty("beginner");
 
 	boardElement.addEventListener("contextmenu", (e) => e.preventDefault());
@@ -523,10 +534,13 @@ window.addEventListener("DOMContentLoaded", function () {
 	});
 
 	window.addEventListener("keydown", (event) => {
-		console.log("dsadsa", event.code);
 		if (event.code === "F2") {
 			event.preventDefault();
 			startNewGameWithDifficulty(currDifficulty);
 		}
+	});
+
+	modeSwitcherBtn.forEach((button) => {
+		button.addEventListener("click", switchMode);
 	});
 });

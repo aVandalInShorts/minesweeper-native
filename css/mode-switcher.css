@@ -1,0 +1,44 @@
+.mode-switcher {
+	--mode-switcher-button-size: 50px;
+
+	position: relative;
+	margin-block-start: 20px;
+	border-radius: 50px;
+	background-color: var(--theme-board-bg-inner);
+	border: 1px solid var(--theme-button-border-1);
+
+	&[data-mode-switcher="flag"] {
+		&:before {
+			translate: var(--mode-switcher-button-size) 0;
+		}
+	}
+
+	button,
+	&:before {
+		height: var(--mode-switcher-button-size);
+		aspect-ratio: 1;
+		border-radius: 50px;
+	}
+
+	button {
+		position: relative;
+		z-index: 2;
+		display: inline-grid;
+		place-items: center;
+		background-color: transparent;
+
+		svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: var(--theme-button-border-2);
+		transition: translate var(--transition-duration) ease;
+	}
+}
