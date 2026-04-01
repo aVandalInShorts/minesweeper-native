@@ -503,7 +503,7 @@ window.addEventListener("DOMContentLoaded", function () {
 	};
 
 	const switchMode = (e) => {
-		const newMode = e.target.getAttribute("data-mode-btn");
+		const newMode = e.currentTarget.getAttribute("data-mode-btn");
 		if (newMode !== mode) {
 			mode = newMode;
 			modeSwitcher.attributes["data-mode-switcher"].value = mode;
